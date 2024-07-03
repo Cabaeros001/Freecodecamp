@@ -1,0 +1,112 @@
+body {
+    text-align: center;
+    font-family: Tahoma;
+    background-color: #493b83;
+    background-image: url(https://img.freepik.com/vector-premium/patron-fitness-fondo-transparente-iconos-gimnasio-linea_116137-1414.jpg?w=1060);
+    background-size: 350px;
+    color: azure;
+}
+
+hr {
+    border-color: #493b83;
+    border: 1px;
+}
+
+.who label {
+    display: flex;
+    flex-direction: column;
+}
+
+form {
+    margin: 0 auto;
+    max-width: 500px;
+    min-width: auto;
+}
+
+fieldset {
+    display: block;
+    background-color: #5b4b95;
+    border-radius: 5px;
+    border: none;
+    text-align: left;
+    max-width: 500px;
+    width: 500px;
+}
+
+.who input {
+    padding: 7px 0 7px 10px;
+    margin: 8px 0 0 0;
+    font-size: 1em;
+}
+
+.how, label {
+    text-align: left;
+    display: block;
+}
+
+.where label {
+    display: block;
+}
+
+textarea {
+    background-color: #493b83;
+    border: none;
+    border-radius: 5px;
+}
+
+select {
+    width: 50%;
+    padding: 7px 0 7px 10px;
+    margin: 8px 0 0 0;
+    font-size: 1em;
+    background-color: #493b83;
+    border: none;
+    color: azure;
+    border-radius: 5px;
+}
+
+input {
+    background-color: #493b83;
+    border-radius: 5px;
+    border: none;
+}
+
+input[type="number"] {
+    width: 20%;
+    text-align: center;
+}
+
+.terms {
+    display: flex;
+    flex-direction: row;
+}
+
+label {
+    padding: 0.5em 0;
+}
+
+.terms a {
+    color: #907ccc;
+}
+
+.terms a:visited {
+    color: rgb(255, 255, 255);
+}
+
+.terms a:hover {
+    color: #6f4fce;
+}
+
+.terms a:active {
+    color: rgb(0, 0, 0);
+}
+
+input[type="submit"] {
+    background-color: #6f4fce;
+    color: azure;
+    width: 106%;
+    height: 50px;
+    border-radius: 50px;
+    margin: auto;
+    font-size: 30px;
+}

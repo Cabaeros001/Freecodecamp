@@ -1,0 +1,10 @@
+#resultados {
+    /* display: flex; */
+    width: 507px;
+    /* display: inline-block; */
+    /* overflow: scroll; */
+    /* border: 1px solid black; */
+}
+body {
+    background-color: beige;
+}

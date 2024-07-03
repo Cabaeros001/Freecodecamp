@@ -1,0 +1,72 @@
+Nuevos etiquetas HTML para tablas:
+
+    <table>
+        <caption></caption>
+        <thead>
+            <tr>                    table row 
+                <td></td>           table data cell
+                <th></th>           table header cell
+            </tr>
+
+        </thead>
+        <tbody>
+            tr
+        </tbody>
+
+    </table>
+
+Buevas etiquetas CSS: 
+
+
+    -The CSS clip property is used to define the visible portions of an element. Set the span[class~="sr-only"] selector to have a clip property of rect(1px, 1px, 1px, 1px).
+
+    -The clip-path property determines the shape the clip property should take. Set the clip-path property to the value of inset(50%), forming the clip-path into a rectangle within the element.
+
+                    span[class~="sr-only"] {
+            border: 0;
+                clip: rect(1px, 1px, 1px, 1px);
+                clip-path: inset(50%)
+            }
+
+
+        -To prevent the text content from overflowing, give your span[class~="sr-only"] selector an overflow property set to hidden and a white-space property set to nowrap.
+                
+                
+                overflow: hidden;
+                white-space: nowrap;
+
+
+
+        -Adding position sticky moved the element into its own stack. To ensure your #years element does not get hidden by different stacks, add a z-index property set to 999 in the #years rule.
+
+                        #years {
+                            display: flex;
+                            justify-content: flex-end;
+                            position: sticky;
+                            top: 0;
+                            background: #0a0a23;
+                            color: #fff;
+                            padding: 0.5rem calc(1.25rem + 2px) 0.5rem 0;
+                            margin: 0 -2px;
+                            z-index: 999;
+                            }    
+
+         -The span[class] syntax will target any span element that has a class attribute set, regardless of the attribute's value.
+
+
+         -The :not() pseudo-selector is used to target all elements that do not match the selector  in this case, any of your span elements that do not have the sr-only class. This ensures that your earlier rules for the span[class~="sr-only"] selector are not overwritten.
+
+         -!important keyword to ensure these properties are always applied, regardless of order or specificity.
+
+
+                margin: -1px !important;
+
+        - Set the border-collapse property to collapse, which will allow cell borders to collapse into a single border, instead of a border around each cell. Also set the border property to 0 to hide the borders themselves.
+
+            border-collapse: collapse;
+            border: 0;
+
+
+        -Vertical align 
+
+              vertical-align: top;

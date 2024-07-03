@@ -1,0 +1,8 @@
+#resultado {
+    display: flex;
+    border: 1px solid black;
+    width: 500px;
+    height: 200px;
+    /* inline-size: auto; */
+    overflow:scroll;
+}

@@ -1,0 +1,133 @@
+* {
+    background-color: #000;
+    color: #FFF;
+    font-family: verdana;
+  }
+  
+  #welcome-section {
+    height: 100vh;
+    background-color: #008;
+    margin-top: -50;
+  }
+  
+  #work {
+    height: 100vh;
+    background-color: #0f0;
+  }
+  
+  body {
+    margin: 0;
+    margin-top: 50;
+  }
+  
+  header {
+    background-color: #888;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  li, ul, #navlink {
+    background-color: #888;
+  }
+  
+  #contact {
+    height: 100vh;
+    background-color: #800;
+  }
+  
+  nav > ul {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-inline-start: 0;
+    margin-block: 0;
+    height: 100%;
+  }
+  
+  nav > ul > li {
+    margin: 0 0.2rem;
+    padding: 0.2rem;
+    display: block;
+  }
+  
+  nav {
+    width: 100%;
+  }
+  
+  .headers {
+    padding: 0;
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0);
+    position: relative;
+    font-weight: normal;
+  }
+  
+  .subheaders {
+    padding: 0;
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0);
+    position: relative;
+    font-weight: normal;
+    font-size: 17;
+  }
+  
+  .welcomeh {
+    top: 46%;
+  }
+  
+  .welcomesh {
+    top: 46.5%;
+  }
+  
+   .workh {
+     top: 10%;
+     z-index: 1;
+   }
+  
+  .contacth {
+    top: 30%;
+  }
+  
+  .project-img {
+    background-color: #060;
+    width: 100%;
+  }
+  
+  .projects {
+    display: grid;
+    background-color: pink;
+    grid-template-columns: 35% 35%;
+    border-radius: 100px;
+    justify-content: center;
+    grid-template-rows: 35% 35%;
+    gap: 50px;
+    max-height: 79vh;
+  }
+  
+  .projects-container {
+    top: 16%;
+    position: relative;
+    height: 80vh;
+  }
+  
+  .project {
+    background-color: #060;
+  }
+  
+  .project-title {
+    text-align: center;
+    background-color: #060;
+  }
+  

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="freeCodeCamp Accessibility Quiz practice project" />
+  <title>Accessibility Quiz</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header>
+    <img id="logo" alt="freeCodeCamp" src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg">
+    <h1>HTML/CSS Quiz</h1>
+    <nav>
+      <ul>
+        <li data="" type=""><a accesskey="s" href="#student-info">INFO</a></li>
+        <li data="" type=""><a accesskey="h" href="#html-questions">HTML</a></li>
+        <li data="" type=""><a accesskey="c" href="#css-questions">CSS</a></li>
+      </ul>
+    </nav>
+
+  </header>
+  <main>
+    <form method="post" action="https://freecodecamp.org/practice-project/accessibility-quiz">
+      <section role="region" aria-labelledby="student-info">
+        <h2 id="student-info">Student info</h2>
+        <div class="info">
+          <label for="name">Name</label>
+          <input type="name" name="name" >
+        </div>
+        <div>
+          <label for="email">E-mail</label>
+          <input type="email" name="email">
+        </div>
+        <div>
+          <label for="birth">Date of birth<span class="sr-only">(Date of Birth)</span></label>
+          <input type="date" name="birth">
+        </div>
+      </section>
+      <section role="region" aria-labelledby="html-questions">
+        <h2 id="html-questions">HTML questions</h2>
+        <div class="question-block">
+          <p>1</p>
+          <fieldset class="question">
+            <legend>Roses are red</legend>
+            <ul class="answers-list">
+              <li><label for="q1-a1"><input type="radio" name="first" id="q1-a1" value="True">True</label></li>
+              <li><label for="q1-a2"><input type="radio" name="first" id="q1-a2" value="False">False</label></li>
+            </ul>
+          </fieldset>
+        </div>
+        <div class="question-block">
+          <p>2</p>
+          <fieldset class="question" name="what2">
+            <legend>You have forget your keys in the train</legend>
+            <ul class="answers-list">
+              <li><label for="q2-a1"><input type="radio" name="second" id="q2-a1" value="True">True</label></li>
+              <li><label for="q2-a2"><input type="radio" name="second" id="q2-a2" value="False">False</label></li>
+            </ul>
+          </fieldset>
+        </div>
+      </section>
+      <section role="region" aria-labelledby="css-questions">
+        <h2 id="css-questions">CSS questions</h2>
+        <div class="formrow">
+          <div class="question-block">
+            <label for="q1">What its the universal symbol in CSS?</label>
+          </div>
+          <div class="answer">
+            <select name="question1" id="q1" required>
+              <option value="">Select an option</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+          <div class="question-block">
+            <label for="q2">How would you show a message ONLY for the screen readers?</label>
+          </div>
+          <div class="answer">
+            <textarea name="question2" id="q2" cols="30" rows="10" placeholder="Area de texto"></textarea>
+          </div>
+        </div>
+      </section>
+  <input type="Submit" value="Send" id="send" >
+   </form>
+  </main>
+  <footer>
+    <address>
+      <a href="https://freecodecamp.org">freeCodeCamp</a><br />
+San Francisco<br />
+California<br />
+USA
+    </address>
+  </footer>
+</body>
+
+</html>

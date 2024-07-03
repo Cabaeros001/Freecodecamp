@@ -1,0 +1,82 @@
+- Que es el em y el rem 
+    -The rem unit stands for root em, and is relative to the font size of the html element.
+        en un 
+         html {
+            font-size: 20px;
+         }
+            0,5rem = 10px
+            1rem = 20px
+            5rem = 100px
+
+- qué son los width="vw"
+
+
+- Un <input> debe ir anidado por un <form> que contenga los atributos "action" donde  se indica la url de envio y un "method"
+   -Tipos de method
+        post
+        dialog
+        get 
+-    <input type="submit" value="aceptar"> que es value? Respuesta: Es el Texto que aparece en un elemento input de tipo submit
+     
+     por rayones de acesibilidad se debe relacionar un input y el label que le corresponda utilizando el atributo "for" en el label y el atributo "id" en el input.
+     ejemplo:
+        label for="first-name">Enter Your First Name: <input type="text" id="first-name" required></label>
+
+    - Tipos de imput en HTML <input type="XXX">
+
+        text
+        password
+        email
+        radio
+            añadir atributo "name=X" para relacionar entre "radio"s
+            "required" no funciona entre 2 inputs por lo que se debe autilizar "checked" para que al menos un campo quede marcado.
+        checkbox
+        file
+        number 
+            debe ser un numero
+                tiene atributo:
+            
+                    "min" minimo
+                    "max" maximo
+        submit   
+        date     
+
+    - Tipos de "custom validations"
+
+        required = campo requrido
+
+        Solo para password: 
+
+        minlength = numero minimo de caracteres
+        maxlength = numero maximo de caracteres
+        pattern = requiere una expresión en concreto para poder ser validado
+           ejemplo:  [a-z0-5]{8,}  ocho o más  letras minusculas o numeros del 0 al 5
+                        ABC67890 no sería validado
+                        abcd0123 seria validado
+
+Desplegables
+ ejemplo:
+    <select name="" id="">
+        <option value="">opcion 1</option>
+        <option value="1">opcion 2</option>
+    </select>
+
+Textarea
+    atributos
+     row
+     cols
+     placeholder
+
+p:last-of-type { }
+That will select the last p element. Create a new selector that targets the last fieldset element and set its border-bottom to none.
+
+input[type="submit"]{
+   display: block;
+   width: 60%;
+}
+
+-"box-sizing" property
+    By default, the "content-box" model is used. With this model, when an element has a specific width, that width is calculated based only on the element's content. Padding and border values get added to the total width, so the element grows to accommodate these values.
+    The "border-box" sizing model does the opposite of content-box. The total width of the element, including padding and border, will be the explicit width set. The content of the element will shrink to make room for the padding and border.
+
+- "::after" pseudo-element: creates an element that is the last child of the selected element. You can use it to add an empty element after the last image. If you give it the same width as the images it will push the last image to the left when the gallery is in a two-column layout. Right now, it is in the center because you set justify-content: center on the flex container.

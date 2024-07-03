@@ -1,0 +1,142 @@
+body {
+    background-color: #222231;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+nav {
+    position: fixed;
+    max-width: 279px;
+    top: 50px;
+    left: 100px;
+
+}
+h1 {
+    font-size: 2em;
+}
+h2 {
+    font-size: 1.5em;
+}
+h3 {
+    font-size: 1.5em;
+    font-weight: 100;
+}
+section {
+    max-width: 765px ;
+}
+img {
+    max-width: 400px;
+}
+li {
+    padding: 5px 0;
+    line-height: 1.34em;
+    text-align: right;
+    position: relative;
+    left: -8px;
+}
+nav ul {
+    border-left: 3px solid #9289a7;
+    padding-left: 5px;
+ 
+}
+nav header {
+    font-size: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    position: relative;
+    right: 33px;
+    padding: 0 0 0 50px;
+}
+nav li {
+    list-style: none;
+    transition: 0.3s;
+}
+
+nav li:hover {
+    background-color: #9289a7;
+    border-left: 3px solid  red;
+}
+pre {
+    background-color: #333356;
+    padding: 10px 10px 0;
+    border-radius: 5px;
+}
+code {
+    background-color: #333356;
+    padding: 0 5px;
+    border-radius: 0.2em;
+    font-family: monospace;
+    margin: 0;
+}
+table {
+    border-collapse: collapse;
+    background-color: #333356;
+    max-width: 700px;
+}
+
+td {
+    border: 1px solid #9289a7;
+    padding: 8px 12px;
+}
+th {
+    border: 1px solid #9289a7;
+    padding: 8px 12px;
+    max-width: 15em;
+    text-align: left;
+    max-width: 33%;
+}
+
+.odd-row {
+    background-color: #262641;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    * {
+      scroll-behavior: smooth;
+    } 
+  }
+
+@media (max-width: 1350px) {
+
+    body {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav {
+        position: fixed;
+        max-width: 100%;
+        top: 0;
+        left: 0;
+        background-color: #3f3356;
+        width: 100%;
+    }
+    nav header {
+        display: none;
+    }
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        border-left: none;
+    }
+    nav li {
+        display: flex;
+        min-width: 110px;
+        margin: 5px;
+    }
+    nav a {
+        position: relative;
+        right: 0px;
+        padding: 0;
+    }
+    nav li:hover {
+        border-left: none;
+    }
+}

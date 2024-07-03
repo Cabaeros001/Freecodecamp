@@ -1,0 +1,114 @@
+Used on <section>
+the "role" attribute can be used to indicate the purpose behind an element on the page to assistive technologies. The role attribute is a part of the Web Accessibility Initiative (WAI), and accepts preset values.
+
+    -Types of "role"
+        region: Every region role requires a label, which helps screen reader users understand the purpose of the region. One method for adding a label is to add a heading element inside the region and then reference it with the aria-labelledby attribute.
+
+
+
+<nav></nav>
+    Used to create a navigator
+     is possible use it to go to other webpages or to navigate in the same webpage
+
+     I have created a <ul> with some <li>, within the <li> I put some anchor elements with an href similar to the <h2> elements who have an id like the href. it is important, if the anchor goes to a part of the same page add at first a "#" character
+
+      <nav>
+        <ul>
+        <li data="" type=""><a href="#student-info">INFO</a></li>
+        <li data="" type=""><a href="#html-questions">HTML</a></li>
+        <li data="" type=""><a href="#css-questions">CSS</a></li>
+        </ul>
+      </nav>
+              
+                
+        <section role="region" aria-labelledby="student-info">
+          <h2 id="student-info">Student Info</h2>
+        </section>
+        <section role="region" aria-labelledby="html-questions">
+          <h2 id="html-questions">HTML</h2>
+        </section>
+        <section role="region" aria-labelledby="css-questions">
+          <h2 id="css-questions">CSS</h2>
+        </section>
+
+
+
+
+<label></label>
+<input></input>
+        <label></label>: it should have a "for" attribute that machts with de "id" of the input
+
+
+
+placeholders: users confuse the placeholder text with an actual input value - they think there is already a value in the input.
+
+Text only for Screen readers:
+
+    The .sr-only text is still visible. There is a common pattern to visually hide text for only screen readers to read.
+
+This pattern is to set the following CSS properties:
+
+The .sr-only text is still visible. There is a common pattern to visually hide text for only screen readers to read.
+
+This pattern is to set the following CSS properties:
+<style>
+position: absolute;
+width: 1px;
+height: 1px;
+padding: 0;
+margin: -1px;
+overflow: hidden;
+clip: rect(0, 0, 0, 0);
+white-space: nowrap;
+border: 0;
+</style>
+
+<span class="sr-only">(Date of Birth)</span>
+
+
+<legend></legend> The legend element represents a caption for the content of its parent fieldset element
+
+
+Nuevos atributos:
+
+access-key="s"
+        Finally, the navigation accessibility can be improved by providing keyboard shortcuts.
+
+        The accesskey attribute accepts a space-separated list of access keys. For example:
+
+        <button type="submit" accesskey="s">Submit</button>
+
+Nuevas etiquetas
+
+    <br /> salto de linea
+    <address /> dirección
+    <footer /> parte inferior de la página donde va información relacionada con ella misma.
+
+CSS
+
+        @media (prefers-reduced-motion: no-preference) {  - el usuario elije que clase de movimiento prefiere
+        * {
+            scroll-behavior: smooth; -movimiento lento hacia una parte de la página
+        } 
+        }
+
+            list-style: none; eliminaría los circulos negros de una lista, tambien se pueden poner de otro tipo
+
+        p::before {
+        content: "Question #"; - añadiría antes de cada elemento "p" el texto "Question #"
+        }
+
+    nav li :hover {
+
+        cursor: pointer; - cambia  la forma del curso al pasar por encima
+        }
+            https://www.w3schools.com/cssref/pr_class_cursor.php
+
+    text-decoration: none; elimina texto subrayado de un ancla
+
+
+    aspect-ratio: 35/ 4; ??
+
+    position: fixed;
+    top: 0;
+         top coloca el header en la parte superior por completo, position, fija nuestro header a la parte superior.
