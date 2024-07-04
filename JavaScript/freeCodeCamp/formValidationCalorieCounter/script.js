@@ -4,7 +4,7 @@ const entryDropdown = document.getElementById('entry-dropdown');
 const addEntryButton = document.getElementById('add-entry');
 const clearButton = document.getElementById('clear');
 const output = document.getElementById('output');
-let isError = false; //In programming, prefixing a variable with is or has is a common practice to signify that the variable represents a boolean value.
+let isError = false; // this is a global error flag //In programming, prefixing a variable with is or has is a common practice to signify that the variable represents a boolean value.
 
 function cleanInputString(str) {
   console.log("original string:", str);
@@ -37,7 +37,32 @@ function addEntry() {
     <label for="${entryDropdown.value}-${entryNumber}-calories">Entry ${entryNumber} Calories</label>
     <input type="number" min="0" id="${entryDropdown.value}-${entryNumber}-calories" placeholder="Calories" />`;
   // create a label and input elements and use "template literal" to use the variables entryNumber and entryDropdown within. 
-  targetInputContainer.innerHTML += HTMLString; // If you want to add another label and input element inside the form, then you can use the innerHTML property
-
-
+  //targetInputContainer.innerHTML += HTMLString; // If you want to add another label and input element inside the form, then you can use the innerHTML property
+  targetInputContainer.insertAdjacentHTML('beforeend', HTMLString); // to add HTMLString and save the changes
 }
+
+function calculateCalories(e) {//This function will be another event listener, so the first argument passed will be the browser event – e is a common name for this parameter.
+  e.preventDefault();
+  isError = false;
+  const breakfastNumberInputs = document.querySelectorAll("#breakfast input[type=number]") // This will return any number inputs that are in the #breakfast element.
+}
+
+function getCaloriesFromInputs(list) { // The list parameter is going to be the result of a query selector, which will return a NodeList. A NodeList is a list of elements like an array.
+  let calories = 0;
+  for (const item of list) { //A for...of loop is used to iterate over elements in an iterable object like an array. The variable declared in the loop represents the current element being iterated over. 
+    const currVal = cleanInputString(item.value);
+    const invalidInputMatch = isInvalidInput(currVal);
+
+    if (invalidInputMatch) {
+      alert(`Invalid Input: ${invalidInputMatch[0]}`) // using template literal to show the first value on the invalidInputMatch array
+      isError = true;
+      return null; // end of the function
+    } 
+    calories += Number(currVal);
+
+  }
+  return calories;
+}
+
+addEntryButton.addEventListener("click", addEntry) //addEventListener have to arguments, the first is the event to listen, the second is the callback function, or the function thant runs when the event is triggered
+
