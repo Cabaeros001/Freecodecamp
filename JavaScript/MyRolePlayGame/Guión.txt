@@ -1,0 +1,64 @@
+### Guion del Juego de Rol con Temática Marítima
+
+#### 1. Ventana Principal
+
+**Título:**
+Legend of the deep sea
+
+**Opciones:**
+- **Ir a la Tienda:**
+  - Descripción: "Has decidido visitar la tienda del puerto. Aquí puedes comprar suministros y vender tus hallazgos."
+- **Ir a la Mazmorra:**
+  - Descripción: "Te adentras en las profundidades del océano. ¡Prepárate para enfrentarte a criaturas peligrosas!"
+- **Salir del Juego:**
+  - Descripción: "Gracias por jugar. ¡Hasta la próxima aventura!"
+
+#### 2. Tienda
+
+**Título:**
+Tienda del Puerto
+
+**Opciones de Compra:**
+- **Comprar Espada de Marinero (50 monedas):**
+  - Descripción: "Has comprado una Espada de Marinero por 50 monedas. Ahora puedes enfrentarte mejor a los peligros del mar."
+- **Comprar Escudo de Coraza de Tortuga (30 monedas):**
+  - Descripción: "Has comprado un Escudo de Coraza de Tortuga por 30 monedas. Ahora estás mejor protegido contra los ataques enemigos."
+  
+**Opción de Venta:**
+- **Vender Objeto:**
+  - Descripción: "Has vendido un objeto. Has ganado 20 monedas."
+
+**Opción de Regresar:**
+- **Regresar:**
+  - Descripción: "Regresas al puerto, listo para tomar tu próxima decisión."
+
+#### 3. Mazmorra
+
+**Título:**
+Profundidades del Océano
+
+**Opciones de Enemigos:**
+- **Enfrentar a un Pirata Fantasma:**
+  - Descripción: "Un Pirata Fantasma aparece desde la niebla. Sus ojos brillan con una luz espectral y su espada está lista para atacar."
+- **Enfrentar a un Kraken Juvenil:**
+  - Descripción: "Un Kraken Juvenil surge de las profundidades. Sus tentáculos se mueven con rapidez, buscando atraparte."
+- **Enfrentar a un Tiburón Gigante:**
+  - Descripción: "Un Tiburón Gigante nada hacia ti con sus mandíbulas abiertas. Es una bestia formidable que acecha en las profundidades."
+
+**Opción de Regresar:**
+- **Regresar:**
+  - Descripción: "Decides volver a la superficie, tomándote un momento para recuperarte antes de tu próxima aventura."
+
+### Descripciones Detalladas
+
+**Tienda:**
+- **Comprar Espada de Marinero:** "Has comprado una Espada de Marinero por 50 monedas. Ahora puedes enfrentarte mejor a los peligros del mar."
+- **Comprar Escudo de Coraza de Tortuga:** "Has comprado un Escudo de Coraza de Tortuga por 30 monedas. Ahora estás mejor protegido contra los ataques enemigos."
+- **Vender Objeto:** "Has vendido un objeto. Has ganado 20 monedas."
+
+**Mazmorra:**
+- **Enfrentar a un Pirata Fantasma:** "Un Pirata Fantasma aparece desde la niebla. Sus ojos brillan con una luz espectral y su espada está lista para atacar."
+- **Enfrentar a un Kraken Juvenil:** "Un Kraken Juvenil surge de las profundidades. Sus tentáculos se mueven con rapidez, buscando atraparte."
+- **Enfrentar a un Tiburón Gigante:** "Un Tiburón Gigante nada hacia ti con sus mandíbulas abiertas. Es una bestia formidable que acecha en las profundidades."
+
+Con este guion, tienes una estructura clara de cómo se desarrollará tu juego de rol marítimo, incluyendo las descripciones de las acciones y situaciones que el jugador encontrará en la tienda y la mazmorra. ¡Espero que disfrutes desarrollando tu juego!

@@ -1,0 +1,92 @@
+* {
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+html {
+    height: 100%;
+    background-color: #30184b;
+    /* text-align: center; */
+}
+
+body {
+    max-width: 1200px;
+    height: 100%;
+    margin: 0;
+}
+
+header {
+    position: fixed;
+    display: flex;
+    background-color: #627af1;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1200px;
+    height: 40px;
+    top: 0;
+    /* left: 0; */
+
+}
+
+header div {
+    display: flex;
+
+}
+span {
+    font-weight: 800;
+}
+
+header div p {
+    margin: 0 1em;
+}
+
+footer {
+    position: fixed;
+    background-color: #3c1e5e;
+
+    color: aqua;
+    bottom: 0;
+    /* left: 0; */
+    height: 12rem;
+    max-width: 1200px;
+    padding: 2em 50px 0 50px;
+    font-size: 12pt;
+
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    /* padding: 200px 0 0 0; */
+    height: 100%;
+    left: 0;
+}
+
+main a {
+    height: 100%;
+    width: 33.3%;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    padding-top: 2em;
+    font-size: 2em;
+    /* border: 1px solid black; */
+    text-decoration: none;
+    color: black;
+
+}
+
+.tienda {
+    background-color: rgb(156, 147, 189);
+}
+
+.mazmorra {
+    background-color: rgb(87, 79, 113);
+}
+
+.salir {
+    background-color: rgb(180, 170, 215);
+}
