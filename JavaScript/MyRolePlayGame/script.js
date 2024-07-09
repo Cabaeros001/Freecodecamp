@@ -1,14 +1,15 @@
-let level = 1;
-let hp = 50;
+let level = 1; //nivel del personaje
+let hp = 50; // Saslud del personaje
 let gold = 50;
-let currentWeapon = 0;
-let strong;
-let defense;
-let weaponPrice = 30;
-let hpPrice = 20;
-let healthRecover = 10;
-let selectEnemy = 0;
+let currentWeapon = 0; // arma equipada (inicial)
+// let strong;
+// let defense;
+let weaponPrice = 30; // precio de un arma
+let hpPrice = 20; // precio curar
+let healthRecover = 10; // cantidad de cura
 let currentEnemie = 0;
+let enemieHp = 50;
+let multiplier = 10; //multiplicador de daño
 
 const button1 = document.querySelector("#button1");
 const button2 = document.querySelector("#button2");
@@ -21,16 +22,19 @@ const goldText = document.querySelector("#goldText");
 const text = document.querySelector("#text");
 const weapons = [
     {
-        name: "Caña de Pescar"
+        name: "Caña de Pescar",
+        level: 0,
         //Fuerza? Defensa?
 
     },
     {
         name: "Espada de Marinero",
+        level: 1,
         text: "Has comprado una Espada de Marinero por 50 monedas. Ahora puedes enfrentarte mejor a los peligros del mar."
     },
     {
         name: "Escudo de coraza de tortuga",
+        level: 2,
         text: "Has comprado un Escudo de Coraza de Tortuga por 30 monedas. Ahora estás mejor protegido contra los ataques enemigos."
     }
 ]
@@ -61,7 +65,7 @@ const locations = [
         name: "Profundidades del oceano", 
         "button text": ["Enfrentar a un Pirata Fantasma", "Enfrentar a un Tiburón Gigante", "¡Huir despavorido!"],
         "button select": [goFight, goFight, goBack],
-        text: "Has decidido adentrarte en las profundidades. A lo lejos ves unos ojos brillar, pero detras ti sientes la presencia de un ser extraño."
+        text: "Has decidido adentrarte en las profundidades. A lo lejos ves unos ojos brillar, pero detras de ti sientes la presencia de un ser extraño."
       
     },{
         name: "The Legend of the Deep Sea", 
@@ -73,6 +77,11 @@ const locations = [
         "button text": ["Atacar", "Protegerse", "Huir despavorido"],
         "button select": [attack, defend, goBack],
         text: `Has decidido luchar contra ${enemies[currentEnemie].name}.`
+    }, {
+        name: "Vencedor",
+        "button text": ["Volver", "Volver", "Volver"],
+        "button select": [goBack, goBack, goBack],
+        text: "Has vencido a tu enemigo y has encontrado un tesoro. Ademas subes de nivel!!"
     }
     
 
@@ -135,21 +144,51 @@ function goFight() {
 function battle(enemie) {
     // button1.onclick =
 }
+function win() {
+    update(locations[4])
+}
 function attack() {
-/*     hpbestia -= nivel de arma*10 -= nivel personaje*10
-    y
-    hp -= niveldearma debestia*10 -= nivel de bestia*10
-    ademas si hp === 0
-    muerto
-    o si 
-    hpbestia <= 0
-    bestia muerta
-    + 10 oro + azar entre 1 y 10
-    + 1 nivel  */
+    enemieHp -=  weapons[currentWeapon].level*Math.floor(Math.random()*10);
+    enemieHp -= level*Math.floor(Math.random()*10);
+    hp -= enemies[currentEnemie]["weapon level"]*Math.floor(Math.random()*5);
+    hp -= enemies[currentEnemie].level*Math.floor(Math.random()*5);
+    hpText.innerText = hp;
+    console.log("HP del enemigo: " + enemieHp + "\n" + "HP del Personaje: " + hp + "\nEnemigo numero: " + currentEnemie);
 
-    console.log(currentEnemie)
-    titleText.innerText = enemies[currentEnemie].name 
+    if (hp <= 0) {
+        goBack()
+        gold -= 5;
+        goldText.innerText = gold;
+        text.innerText = `Te has desmayado y apareciste en la entrada de la mazmorra, perdiste 5 monedas de oro`;
+        hp = 50;
+        hpText = hp;
+        currentEnemie = 0;
+        enemieHp = 50;
 
+    } else if (enemieHp <= 0) {
+        win()
+        gold += 10+Math.floor(Math.random()*10);
+        goldText.innerText = gold;
+        level++;
+        levelText.innerText = level;
+        console.log("gold = " + gold);   
+        currentEnemie = 0;
+        enemieHp = 50;     
+    }
 }
 function defend() {
-/* hp -= nivel de arma de bestia*2 - nivel de bestia*2 */}
+    hp -= enemies[currentEnemie]["weapon level"]*Math.floor(Math.random()*2);
+    hp -= enemies[currentEnemie].level*Math.floor(Math.random()*2);
+    hpText.innerText = hp;
+    console.log("HP del enemigo: " + enemieHp + "\n" + "HP del Personaje: " + hp + "\nEnemigo numero: " + currentEnemie);
+    if (hp <= 0) {
+        goBack()
+        gold -= 5;
+        goldText.innerText = gold;
+        text.innerText = `Te has desmayado y apareciste en la entrada de la mazmorra, perdiste 5 monedas de oro`;
+        hp = 50;
+        hpText = hp;
+        currentEnemie = 0;
+        enemieHp = 50;
+    }
+}
