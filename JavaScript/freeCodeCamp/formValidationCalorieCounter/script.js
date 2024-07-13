@@ -42,9 +42,30 @@ function addEntry() {
 }
 
 function calculateCalories(e) {//This function will be another event listener, so the first argument passed will be the browser event – e is a common name for this parameter.
-  e.preventDefault();
+  e.preventDefault(); // prevent reload of t he page of the submit button.
   isError = false;
-  const breakfastNumberInputs = document.querySelectorAll("#breakfast input[type=number]") // This will return any number inputs that are in the #breakfast element.
+  const breakfastNumberInputs = document.querySelectorAll("#breakfast input[type=number]"); // This will return any number inputs that are in the #breakfast element.
+  const lunchNumberInputs = document.querySelectorAll('#lunch input[type=number]');
+  const dinnerNumberInputs = document.querySelectorAll('#dinner input[type=number]');
+  const snacksNumberInputs = document.querySelectorAll('#snacks input[type=number]');
+  const exerciseNumberInputs = document.querySelectorAll('#exercise input[type=number]');
+  const budgetCalories = getCaloriesFromInputs([budgetNumberInput]) // A NodeList is an array-like, which means you can iterate through it and it shares some common methods with an array. For your getCaloriesFromInputs function, an array will work for the argument just as well as a NodeList does.
+  if (isError) { //Check truthyness of isError. If an invalid input is introuded isError +become true
+    return;
+  }
+
+  const consumedCalories = breakfastCalories + lunchCalories + dinnerCalories + snacksCalories;
+  const remainingCalories = budgetCalories - consumedCalories + exerciseCalories;
+  const surplusOrDeficit = remainingCalories < 0 ? "Surplus" : "Deficit"; // Ternary operator
+  output.innerHTML = `
+  <span class="${surplusOrDeficit.toLowerCase()}">${Math.abs(remainingCalories)} Calorie ${surplusOrDeficit}</span>
+  <hr>
+  <p>${budgetCalories} Calories Budgeted</p>
+  <p>${consumedCalories} Calories Consumed</p>
+  <p>${exerciseCalories} Calories Burned</p>
+  `;
+
+  output.classList.remove('hide'); //classList is a property and remove() is a method.
 }
 
 function getCaloriesFromInputs(list) { // The list parameter is going to be the result of a query selector, which will return a NodeList. A NodeList is a list of elements like an array.
@@ -63,6 +84,17 @@ function getCaloriesFromInputs(list) { // The list parameter is going to be the 
   }
   return calories;
 }
+function clearForm() {
+  const inputContainers = Array.from(document.querySelectorAll('.input-container')); // Remember that document.querySelectorAll returns a NodeList, which is array-like but is not an array. However, the Array object has a .from() method that accepts an array-like and returns an array. This is helpful when you want access to more robust array methods.
+  for (const container of inputContainers) { // the container variable iterate through the input containers array
+    container.innerHTML = "";
+    budgetNumberInput.value = '';
+    output.innerText = '';
+    output.classList.add('hide');
+  }
+  }
 
 addEntryButton.addEventListener("click", addEntry) //addEventListener have to arguments, the first is the event to listen, the second is the callback function, or the function thant runs when the event is triggered
+calorieCounter.addEventListener("submit", calculateCalories); //
 
+clearButton.addEventListener("click", clearForm); //add an event listener to the clearButton button. When the button is clicked, it should call the clearForm function.
