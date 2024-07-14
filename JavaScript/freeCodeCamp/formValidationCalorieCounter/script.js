@@ -7,12 +7,11 @@ const output = document.getElementById('output');
 let isError = false; // this is a global error flag //In programming, prefixing a variable with is or has is a common practice to signify that the variable represents a boolean value.
 
 function cleanInputString(str) {
-  console.log("original string:", str);
+  // console.log("original string:", str);
   const regex = /[+-\s]/;
   return str.replace(regex, ""); //   replace all instances of +, -, and a space (const regex) in str with an empty string. Return this value.
 }
 
-// console.log(cleanInputString("+-98")) 
 
 //  In HTML, number inputs allow for exponential notation (such as 1e10). You need to filter those out.
 function isInvalidInput(str) {
@@ -22,12 +21,12 @@ function isInvalidInput(str) {
 
 /*   console.log(isInvalidInput("1e3")); //  returns [ '1e3', index: 0, input: '1e3', groups: undefined ] */
 
-/* function addEntry() {
+function addEntry() {
   const targetId = '#' + entryDropdown.value ; //use the value property to get the value of the selected option.
   const targetInputContainer = document.querySelector(targetId + " .input-container") ; //target the .input-container element within the element that has your targetId
   // const targetInputContainer = document.querySelector(`${targetId} .input-container`) // template literals, which allow you to interpolate variables directly within a string. Replace our concatenated string in the querySelector with a template literal
 
-  } */
+  }
 
 function addEntry() {
   const targetInputContainer = document.querySelector(`#${entryDropdown.value} .input-container`); // Thanks to template literals, you actually don't need the targetId variable at all. 
@@ -88,13 +87,13 @@ function clearForm() {
   const inputContainers = Array.from(document.querySelectorAll('.input-container')); // Remember that document.querySelectorAll returns a NodeList, which is array-like but is not an array. However, the Array object has a .from() method that accepts an array-like and returns an array. This is helpful when you want access to more robust array methods.
   for (const container of inputContainers) { // the container variable iterate through the input containers array
     container.innerHTML = "";
-    budgetNumberInput.value = '';
+    budgetNumberytjInput.value = '';
     output.innerText = '';
     output.classList.add('hide');
   }
   }
 
-addEntryButton.addEventListener("click", addEntry) //addEventListener have to arguments, the first is the event to listen, the second is the callback function, or the function thant runs when the event is triggered
+addEntryButton.addEventListener("click", addEntry); //addEventListener have to arguments, the first is the event to listen, the second is the callback function, or the function thant runs when the event is triggered
 calorieCounter.addEventListener("submit", calculateCalories); //
 
 clearButton.addEventListener("click", clearForm); //add an event listener to the clearButton button. When the button is clicked, it should call the clearForm function.

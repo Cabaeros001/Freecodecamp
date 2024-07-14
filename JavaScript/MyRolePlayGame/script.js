@@ -129,9 +129,9 @@ function hpRecover() {
         gold -= hpPrice;
         hpText.innerText = hp;
         goldText.innerText = gold;
-        text.innerText = "Recuperaste algo de salud."
+        text.innerText = "Recuperaste algo de salud.";
     } else {
-        text.innerText = "No tienes suficiente oro para recuperar salud."
+        text.innerText = "No tienes suficiente oro para recuperar salud.";
     }
 
 }

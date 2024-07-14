@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Contador de calorias</title>
+</head>
+
+<body>
+    <h1>Contador de calorias</h1>
+    <div class="controls">
+        <div>
+            <span>
+                <label for="new-entry-drop">Añadir una comida o ejercicio</label>
+                <select name="options" id="new-entry-drop">
+                    <option value="desayuno">Desayuno</option>
+                    <option value="comida">Comida</option>
+                    <option value="merienda">Merienda</option>
+                    <option value="cena">Cena</option>
+                    <option value="ejercicio">Ejercicio</option>
+                </select>
+                <button type="button" id="add-entry">Añadir entrada</button>
+            </span>
+        </div>
+        <div class="calculate-clear">
+            <button id="calculate">Calcular</button>
+            <button id="clear">Borrar</button>
+        </div>
+    </div>
+    <form id="contador-calorias">
+        <fieldset>
+            <div>
+                <label for="daily-calories"><input type="number" id="daily-calories"
+                        placeholder="Introduzca cuántas calorias consume al día." required></label>
+            </div>
+            <div>
+                <div id="desayuno" class="desayuno">
+                    <h4>Desayuno</h4>
+                    <div class="input-container"></div>
+                </div>
+                <div id="comida">
+                    <h4>Comida</h4>
+                    <div class="input-container"></div>
+                </div>
+                <div id="merienda">
+                    <h4>Merienda</h4>
+                    <div class="input-container"></div>
+                </div>
+                <div id="cena">
+                    <h4>Cena</h4>
+                    <div class="input-container"></div>
+                </div>
+                <div id="ejercicio">
+                    <h4>Ejercicio</h4>
+                    <div class="input-container"></div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
+<script src="script.js"></script>
+</body>
+
+</html>
